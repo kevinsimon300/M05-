@@ -173,7 +173,7 @@ public class Bitllets_SimonKevin {
         System.out.println("S'ha de pagar "+suma);
 
         do{
-            System.out.println("Introdueix monedes o bitllets vàlids de EURO?");
+            System.out.println("Introdueix monedes o bitllets vàlids de Dolar?");
             enteredImport = input.nextFloat();
             if(enteredImport >= suma){
                 System.out.println("L'import es mès gran que "+suma);
