@@ -10,8 +10,10 @@ public class Bitllets_SimonKevin {
      * procedure to display the welcome message
      */
     private static void messageInit(){
+        final String BLUE = "\033[34m";
+        final String RESET = "\u001B[0m";
         final String message = "--------------------\nQuin bitllet desitja adquirir?\n1 - Bitllet senzill\n 2 - TCasual\n 3 - TUsual\n 4 - TFamiliar\n 5 - TJove";
-        System.out.println(message);
+        System.out.println(BLUE+message+RESET);
     }
 
     /**
