@@ -264,27 +264,16 @@ public class Bitllets_SimonKevin {
         do {
             messageInit();
             selectedOption = hasNextInt("Introdueix el típus de bitllet",correctType, input);
-            switch (selectedOption){
-                case 1:
-                    if(ticketsComprar <= 2) {
-                        ticketName[ticketsComprar] = nomTicket(selectedOption);
-                        zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
-                        zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
-                        price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
-                        ticketsComprar++;
-                        System.out.println(volsComprar);
-                        seguirComprant = input.nextLine().charAt(0);
-                        if(seguirComprant == 'n' || seguirComprant == 'N'){
-                            pagarBitllet(price, ticketName, zonesViatjar, input);
-                            for (int i = 0; i < ticketsComprar; i++) {
-                                zonesViatjar[ticketsComprar] = "";
-                                ticketName[ticketsComprar] = "";
-                                price[ticketsComprar] = 0;
-                            }
-                            ticketsComprar = 0;
-                        }
-                    }else{
-                        ticketsComprar--;
+            if(selectedOption == 1 || selectedOption == 2 || selectedOption == 3 || selectedOption == 4 || selectedOption == 5){
+                if(ticketsComprar <= 2) {
+                    ticketName[ticketsComprar] = nomTicket(selectedOption);
+                    zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
+                    zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
+                    price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
+                    ticketsComprar++;
+                    System.out.println(volsComprar);
+                    seguirComprant = input.nextLine().charAt(0);
+                    if(seguirComprant == 'n' || seguirComprant == 'N'){
                         pagarBitllet(price, ticketName, zonesViatjar, input);
                         for (int i = 0; i < ticketsComprar; i++) {
                             zonesViatjar[ticketsComprar] = "";
@@ -293,126 +282,22 @@ public class Bitllets_SimonKevin {
                         }
                         ticketsComprar = 0;
                     }
-                    break;
-                case 2:
-                    if(ticketsComprar <= 2) {
-                        ticketName[ticketsComprar] = nomTicket(selectedOption);
-                        zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
-                        zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
-                        price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
-                        ticketsComprar++;
-                        System.out.println(volsComprar);
-                        seguirComprant = input.nextLine().charAt(0);
-                        if(seguirComprant == 'n' || seguirComprant == 'N'){
-                            pagarBitllet(price, ticketName, zonesViatjar, input);
-                            for (int i = 0; i < ticketsComprar-1; i++) {
-                                zonesViatjar[ticketsComprar] = "";
-                                ticketName[ticketsComprar] = "";
-                                price[ticketsComprar] = 0;
-                            }
-                            ticketsComprar = 0;
-                        }
-                    }else{
-                        pagarBitllet(price, ticketName, zonesViatjar, input);
-                        for (int i = 0; i < ticketsComprar-1; i++) {
-                            zonesViatjar[ticketsComprar] = "";
-                            ticketName[ticketsComprar] = "";
-                            price[ticketsComprar] = 0;
-                        }
-                        ticketsComprar = 0;
+                }else{
+                    ticketsComprar--;
+                    pagarBitllet(price, ticketName, zonesViatjar, input);
+                    for (int i = 0; i < ticketsComprar; i++) {
+                        zonesViatjar[ticketsComprar] = "";
+                        ticketName[ticketsComprar] = "";
+                        price[ticketsComprar] = 0;
                     }
-                    break;
-                case 3:
-                    if(ticketsComprar <= 2) {
-                        ticketName[ticketsComprar] = nomTicket(selectedOption);
-                        zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
-                        zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
-                        price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
-                        ticketsComprar++;
-                        System.out.println(volsComprar);
-                        seguirComprant = input.nextLine().charAt(0);
-                        if(seguirComprant == 'n' || seguirComprant == 'N'){
-                            pagarBitllet(price, ticketName, zonesViatjar, input);
-                            for (int i = 0; i < ticketsComprar-1; i++) {
-                                zonesViatjar[ticketsComprar] = "";
-                                ticketName[ticketsComprar] = "";
-                                price[ticketsComprar] = 0;
-                            }
-                            ticketsComprar = 0;
-                        }
-                    }else{
-                        pagarBitllet(price, ticketName, zonesViatjar, input);
-                        for (int i = 0; i < ticketsComprar-1; i++) {
-                            zonesViatjar[ticketsComprar] = "";
-                            ticketName[ticketsComprar] = "";
-                            price[ticketsComprar] = 0;
-                        }
-                        ticketsComprar = 0;
-                    }
-                    break;
-                case 4:
-                    if(ticketsComprar <= 2) {
-                        ticketName[ticketsComprar] = nomTicket(selectedOption);
-                        zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
-                        zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
-                        price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
-                        ticketsComprar++;
-                        System.out.println(volsComprar);
-                        seguirComprant = input.nextLine().charAt(0);
-                        if(seguirComprant == 'n' || seguirComprant == 'N'){
-                            pagarBitllet(price, ticketName, zonesViatjar, input);
-                            for (int i = 0; i < ticketsComprar; i++) {
-                                zonesViatjar[ticketsComprar] = "";
-                                ticketName[ticketsComprar] = "";
-                                price[ticketsComprar] = 0;
-                            }
-                            ticketsComprar = 0;
-                        }
-                    }else{
-                        pagarBitllet(price, ticketName, zonesViatjar, input);
-                        for (int i = 0; i < ticketsComprar-1; i++) {
-                            zonesViatjar[ticketsComprar-1] = "";
-                            ticketName[ticketsComprar] = "";
-                            price[ticketsComprar] = 0;
-                        }
-                        ticketsComprar = 0;
-                    }
-                    break;
-                case 5:
-                    if(ticketsComprar <= 2) {
-                        ticketName[ticketsComprar] = nomTicket(selectedOption);
-                        zonesViatjar[ticketsComprar] = zonesaViatjar(zonesViatjarInt[ticketsComprar], input);
-                        zonesViatjarInt[ticketsComprar] = parseInt(zonesViatjarInt[ticketsComprar], zonesViatjar[ticketsComprar]);
-                        price[ticketsComprar] = calculateTicket(ticketName[ticketsComprar], zonesViatjarInt[ticketsComprar]);
-                        ticketsComprar++;
-                        System.out.println(volsComprar);
-                        seguirComprant = input.nextLine().charAt(0);
-                        if(seguirComprant == 'n' || seguirComprant == 'N'){
-                            pagarBitllet(price, ticketName, zonesViatjar, input);
-                            for (int i = 0; i < ticketsComprar; i++) {
-                                zonesViatjar[ticketsComprar] = "";
-                                ticketName[ticketsComprar] = "";
-                                price[ticketsComprar] = 0;
-                            }
-                            ticketsComprar = 0;
-                        }
-                    }else{
-                        pagarBitllet(price, ticketName, zonesViatjar, input);
-                        for (int i = 0; i < ticketsComprar-1; i++) {
-                            zonesViatjar[ticketsComprar-1] = "";
-                            ticketName[ticketsComprar] = "";
-                            price[ticketsComprar] = 0;
-                        }
-                        ticketsComprar = 0;
-                    }
-                    break;
-                case 4321:
-                    System.out.println("Machine OFF!");
-                    break;
-                default:
-                    System.out.println("ERROR! Enter a correct option");
-                    break;
+                    ticketsComprar = 0;
+                }
+            }else if(selectedOption == 4321){
+                System.out.println("Machine OFF!");
+            }else{
+                System.out.println("ERROR! Enter a correct option");
             }
+
         }while (selectedOption != 4321);
     }
 
